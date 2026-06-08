@@ -1,22 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css">
     <title>Movies Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Welcome to Movies Database</h1>
 
-    <input id="search" placeholder="Search movies..."/>
+    <input id="search" placeholder="Search movies..." />
     <button onclick="searchMovies()">Search</button>
 
     <div id="results"></div>
 
     <script>
-        function searchMovies(){
-            document.getElementById("results").innerHTML ="Coming soon..."
+      async function searchMovies() {
+        const query = document.getElementById("search").value;
+
+        const res = await fetch(
+          `https://www.omdbapi.com/?apikey=ee5c0e34&s=${query}`,
+        );
+
+        const data = await res.json();
+
+        const resultsDiv = document.getElementById("results");
+
+        if (data.Search) {
+          resultsDiv.innerHTML = data.Search.map(
+            (movie) => `
+        <div class="movie-card">
+          <h3>${movie.Title}</h3>
+          <img src="${movie.Poster}" width="150"/>
+          <p>${movie.Year}</p>
+        </div>
+      `,
+          ).join("");
+        } else {
+          resultsDiv.innerHTML = "No movies found";
         }
+      }
     </script>
-</body>
+  </body>
 </html>
