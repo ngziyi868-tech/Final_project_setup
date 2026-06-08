@@ -4,13 +4,18 @@ const servers = dns.getServers();
 console.log("Node.js is using these DNS servers:", servers);
 
 require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
+
 const app = express();
 
 app.use(express.json());
-app.use(express.json());
 app.use(express.static("public"));
+
+const authRoutes = require("./routes/authRoutes")
+
+app.use("/api/auth", authRoutes)
 
 mongoose
   .connect(process.env.MONGO_URI)
