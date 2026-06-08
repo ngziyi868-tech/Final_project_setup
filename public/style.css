@@ -1,28 +1,93 @@
-.hero{
-    height:100%;
-    width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4), url(https://img.magnific.com/free-photo/movie-background-collage_23-2149876028.jpg?semt=ais_hybrid&w=740&q=80));
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-
-}
-
-
-
-body {
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  text-align: center;
 }
 
+/* =========================
+   GLOBAL TYPOGRAPHY
+========================= */
+h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+
+  background-color: rgb(145, 145, 204);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   FORM AREA
+========================= */
+.form-box {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   BUTTON BOX (LOGIN / REGISTER LINKS)
+========================= */
+.button-box {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.button-box a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.button-box a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* =========================
+   BODY (REMOVED CONFLICTS FIXED)
+========================= */
+body {
+  text-align: center;
+  background: #f4f4f4;
+}
+
+
+
+/* =========================
+   MOVIE CARDS
+========================= */
 .movie-card {
   background: white;
   padding: 10px;
   margin: 10px auto;
   width: 200px;
+
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
 }
 
 .movie-card img {
