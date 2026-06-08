@@ -8,5 +8,31 @@
     <h2>Login</h2>
     <input id="email" placeholder="email" />
     <input id="password" placeholder="password" type="password" />
+
+    <button onclick="login()">Login</button>
+    <script>
+      async function login() {
+        const res = await fetch("/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+          }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          alert("Login successful!");
+
+          localStorage.setItem("token", data.token);
+
+          window.location.href = "/movies.html";
+        } else {
+          alert(data.message);
+        }
+      }
+    </script>
   </body>
 </html>
