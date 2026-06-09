@@ -17,6 +17,7 @@
     <div id="results" class="movies-grid"></div>
 
     <script>
+      const token = localStorage.getItem("token");
       if (!token) {
         alert("You must be logged in");
         window.location.href = "/login.html";
