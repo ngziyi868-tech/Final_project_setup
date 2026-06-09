@@ -3,15 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style.css" />
+    <title>Register</title>
   </head>
-  <body>
-    <h2>Register</h2>
-    <input id="username" placeholder="username" />
-    <input id="email" placeholder="email" />
-    <input id="password" placeholder="password" type="password" />
 
-    <button onclick="register()">Register</button>
+  <body class="register-body">
+    <div class="register-container">
+      <h2 class="register-title">Create Account</h2>
+
+      <input class="register-input" id="username" placeholder="Username" />
+
+      <input class="register-input" id="email" placeholder="Email" />
+
+      <input
+        class="register-input"
+        id="password"
+        placeholder="Password"
+        type="password"
+      />
+
+      <button class="register-btn" onclick="register()">Register</button>
+    </div>
 
     <script>
       async function register() {
@@ -24,11 +36,11 @@
             password: document.getElementById("password").value,
           }),
         });
+
         const data = await res.json();
 
         if (res.ok) {
           alert("Registration successful!");
-
           window.location.href = "/login.html";
         } else {
           alert(data.message);

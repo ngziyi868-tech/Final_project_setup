@@ -17,48 +17,71 @@ h1 {
 }
 
 /* =========================
-   HERO SECTION
+   MAIN PAGE SECTION
 ========================= */
 .hero {
   height: 100vh;
-  width: 100%;
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  background-color: rgb(145, 145, 204);
+  background: rgb(0, 0, 0);
 
-  background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* =========================
-   FORM AREA
-========================= */
 .form-box {
-  position: relative;
-  z-index: 2;
+  width: 400px;
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  text-align: center;
 }
 
-/* =========================
-   BUTTON BOX (LOGIN / REGISTER LINKS)
-========================= */
+.home-title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* BUTTON BOX (LOGIN / REGISTER LINKS) */
 .button-box {
   display: flex;
-  justify-content: space-around;
-  position: relative;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 20px;
 }
 
 .button-box a {
   text-decoration: none;
+
   color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  transition: 0.3s;
+  font-weight: bold;
+
+  padding: 12px 28px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+
+  transition: all 0.3s ease;
 }
 
 .button-box a:hover {
-  background: rgba(255,255,255,0.15);
+  background: #420404;
+  transform: translateY(-2px);
 }
 
 /* =========================
@@ -69,11 +92,120 @@ body {
   background: #f4f4f4;
 }
 
+/*LOGIN PAGE*/
+
+.login-body {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(135, 63, 63);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.login-title {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.login-input {
+  width: 280px;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.login-btn {
+  width: 280px;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 15px;
+
+  border: none;
+  border-radius: 8px;
+  background: pink;
+  color: black;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/*REGISTER PAGE */
+.register-body {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(32, 29, 53);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.register-title {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.register-input {
+  width: 280px;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.register-container {
+  width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  animation: registerFade 0.6s ease;
+}
+
+.register-btn {
+  width: 280px;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 15px;
+
+  border: none;
+  border-radius: 8px;
+  background: rgb(0, 94, 255);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* MOVIES DATABASE PAGE */ 
 
 
-/* =========================
-   MOVIE CARDS
-========================= */
+
 .movie-card {
   background: white;
   padding: 10px;
@@ -81,7 +213,7 @@ body {
   width: 200px;
 
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
   transition: transform 0.2s;
 }
